@@ -1,3 +1,6 @@
+import gameState from './gameState';
+import decisionProcessing from './decisionProcessing';
+
 export default function createGrid(size) {
   const gridContainer = document.getElementById('nonogram-grid');
   gridContainer.innerHTML = '';
@@ -6,24 +9,33 @@ export default function createGrid(size) {
     for (let j = 0; j < size; j += 1) {
       const button = document.createElement('button');
       button.classList.add('cell');
-      button.id = `cell${i}${j}`;
+      button.value = `${i},${j}`;
 
-      // left mouse click
-      button.addEventListener('click', (event) => {
+      button.addEventListener('mousedown', (event) => {
+        const [row, col] = button.value.split(',').map(Number);
+
         if (event.button === 0) {
+          // left mouse click
           button.classList.remove('crossed');
           button.classList.toggle('filled');
-        }
-      });
-
-      // right mouse click
-      button.addEventListener('contextmenu', (event) => {
-        event.preventDefault();
-
-        if (event.button === 2) {
+          gameState.grid[row][col] = button.classList.contains(
+            'filled',
+          )
+            ? 1
+            : 0;
+        } else if (event.button === 2) {
+          // right mouse click
+          event.preventDefault();
           button.classList.remove('filled');
           button.classList.toggle('crossed');
+          gameState.grid[row][col] = button.classList.contains(
+            'crossed',
+          )
+            ? -1
+            : 0;
         }
+
+        decisionProcessing();
       });
 
       gridContainer.appendChild(button);
