@@ -70,8 +70,8 @@ input[readonly] {
 
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .header_logo {
@@ -89,9 +89,67 @@ input[readonly] {
   font-weight: 600;
 }
 
+.main {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.select_wrapper {
+  width: auto;
+}
+
+.templates_label {
+  display: inline-block;
+  margin-right: 5px;
+  color: var(--primary-light);
+  font-weight: 500;
+}
+
+.templates_select {
+  background-color: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 8px;
+  padding: 5px 10px;
+  width: 150px;
+
+  font-family: var(--font-family);
+  font-size: 1em;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--white);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  position: relative;
+
+  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6"%3E%3Cpath d="M0 0l5 6 5-6H0z" fill="%23fff"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px 9px;
+}
+
+.templates_select:hover {
+  border-color: var(--primary-light);
+}
+
+.templates_option {
+  padding: 10px;
+  background-color: var(--white);
+
+  font-family: var(--font-family);
+  font-size: 1em;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--primary-light);
+}
+
 .nonogram_grid {
   width: fit-content;
-  margin-top: 20px;
   border: 3px solid var(--grid-dark);
   background: var(--grid-dark);
 
