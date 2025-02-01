@@ -25,8 +25,20 @@ export default function initializeApp(callback) {
   const main = document.createElement('main');
   main.className = 'main';
 
+  const options = document.createElement('div');
+  options.id = 'options';
+  options.className = 'options';
+
   const selectTemplates = createSelectTemplates();
-  main.appendChild(selectTemplates);
+  options.appendChild(selectTemplates);
+
+  const solutionButton = document.createElement('button');
+  solutionButton.id = 'solution-button';
+  solutionButton.type = 'button';
+  solutionButton.textContent = 'Solution';
+  solutionButton.className = 'action_button';
+  options.appendChild(solutionButton);
+  main.appendChild(options);
 
   const grid = document.createElement('div');
   grid.className = 'nonogram_grid';

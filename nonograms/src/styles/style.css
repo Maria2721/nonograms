@@ -91,6 +91,7 @@ input[readonly] {
 
 .main {
   margin-top: 20px;
+  margin-left: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -99,15 +100,12 @@ input[readonly] {
   gap: 20px;
 }
 
-.select_wrapper {
-  width: auto;
-}
-
-.templates_label {
-  display: inline-block;
-  margin-right: 5px;
-  color: var(--primary-light);
-  font-weight: 500;
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .templates_select {
@@ -115,7 +113,7 @@ input[readonly] {
   border: 3px solid var(--primary-dark);
   border-radius: 8px;
   padding: 5px 10px;
-  width: 150px;
+  width: 180px;
 
   font-family: var(--font-family);
   font-size: 1em;
@@ -146,6 +144,35 @@ input[readonly] {
   font-weight: var(--font-weight);
   line-height: var(--line-height);
   color: var(--primary-light);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.templates_option:focus {
+  background-color: var(--primary-light);
+  color: var(--white);
+}
+
+.action_button {
+  background-color: var(--primary-dark);
+  border: 3px solid var(--primary-dark);
+  border-radius: 8px;
+  padding: 5px 10px;
+
+  font-family: var(--font-family);
+  font-size: 1em;
+  font-weight: var(--font-weight);
+  line-height: var(--line-height);
+  color: var(--white);
+
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.action_button:hover {
+  color: var(--primary-light);
+  border-color: var(--primary-light);
 }
 
 .nonogram_grid {
