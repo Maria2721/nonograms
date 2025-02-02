@@ -25,7 +25,6 @@ export default function createGrid(size) {
             : 0;
         } else if (event.button === 2) {
           // right mouse click
-          event.preventDefault();
           button.classList.remove('filled');
           button.classList.toggle('crossed');
           gameState.grid[row][col] = button.classList.contains(
@@ -36,6 +35,11 @@ export default function createGrid(size) {
         }
 
         decisionProcessing();
+      });
+
+      // prevent context menu on right mouse click!!!
+      button.addEventListener('contextmenu', (event) => {
+        event.preventDefault();
       });
 
       gridContainer.appendChild(button);

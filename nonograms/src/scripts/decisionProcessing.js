@@ -6,7 +6,7 @@ export default function decisionProcessing() {
   const template = nonograms.easy[gameState.template];
   const { grid } = gameState;
 
-  const isWin = grid.every((row, i) => row.every((cell, j) => cell === template[i][j]));
+  const isWin = grid.every((row, i) => row.every((cell, j) => cell === -1 || cell === template[i][j]));
 
   if (isWin) {
     createWinModal();
