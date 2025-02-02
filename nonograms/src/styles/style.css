@@ -175,7 +175,49 @@ input[readonly] {
   border-color: var(--primary-light);
 }
 
+.nonogram_wrapper {
+  display: grid;
+  grid-template-areas:
+    ". colClues"
+    "rowClues nonogramGrid";
+}
+
+.nonogram_rowClues {
+  grid-area: rowClues;
+  margin: 3px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.rowClue {
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nonogram_colClues {
+  grid-area: colClues;
+  margin: 5px 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2px;
+}
+
+.colClue {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .nonogram_grid {
+  grid-area: nonogramGrid;
   width: fit-content;
   border: 3px solid var(--grid-dark);
   background: var(--grid-dark);

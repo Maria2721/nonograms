@@ -40,10 +40,25 @@ export default function initializeApp(callback) {
   options.appendChild(solutionButton);
   main.appendChild(options);
 
+  const nonogramWrapper = document.createElement('div');
+  nonogramWrapper.className = 'nonogram_wrapper';
+  nonogramWrapper.id = 'nonogram-wrapper';
+
+  const nonogramRowClues = document.createElement('div');
+  nonogramRowClues.className = 'nonogram_rowClues';
+  nonogramRowClues.id = 'nonogram-rowClues';
+  nonogramWrapper.appendChild(nonogramRowClues);
+
+  const nonogramColClues = document.createElement('div');
+  nonogramColClues.className = 'nonogram_colClues';
+  nonogramColClues.id = 'nonogram-colClues';
+  nonogramWrapper.appendChild(nonogramColClues);
+
   const grid = document.createElement('div');
   grid.className = 'nonogram_grid';
   grid.id = 'nonogram-grid';
-  main.appendChild(grid);
+  nonogramWrapper.appendChild(grid);
+  main.appendChild(nonogramWrapper);
 
   app.appendChild(main);
 
