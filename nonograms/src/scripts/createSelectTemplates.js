@@ -2,6 +2,7 @@ import nonograms from '../data/nonograms.json';
 import gameState from './gameState';
 import generateClues from './generateClues';
 import showClues from './showClues';
+import resetGrid from './resetGrid';
 
 export default function createSelectTemplates() {
   const templatesSelect = document.createElement('select');
@@ -25,6 +26,7 @@ export default function createSelectTemplates() {
   });
 
   templatesSelect.addEventListener('change', (event) => {
+    resetGrid();
     gameState.template = event.target.value;
     const templateMatrix = nonograms.easy[event.target.value];
     const { rowClues, colClues } = generateClues(templateMatrix);

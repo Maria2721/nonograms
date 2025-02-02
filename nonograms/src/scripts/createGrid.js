@@ -14,6 +14,8 @@ export default function createGrid(size) {
       button.addEventListener('mousedown', (event) => {
         const [row, col] = button.value.split(',').map(Number);
 
+        if (gameState.template === '') return;
+
         if (event.button === 0) {
           // left mouse click
           button.classList.remove('crossed');

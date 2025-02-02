@@ -1,4 +1,6 @@
 import createSelectTemplates from './createSelectTemplates';
+import highlightGrid from './highlightGrid';
+import resetGrid from './resetGrid';
 
 const svgCode = `<svg width="64"height="64"viewBox="0 0 192 192"xmlns="http://www.w3.org/2000/svg"fill="none"><path stroke="currentColor"stroke-linecap="round"stroke-linejoin="round"stroke-width="8"
 d="M23.271 155.421a8.131 8.131 0 0 0 5.404 7.66M60.518 136.8V64.58h80.186m-117.15 74.586a8.13 8.13 0 1 1 8.131 8.131m69.711 14.614-18.512-18.674m17.646-5.656-23.26 23.464m85.448-32.946H124.03v38.688h38.688v-38.688ZM25.674 84.396l8.565-7.317v27.602M80.55 27.53l8.566-7.317v27.603m44.226-19.109a8.499 8.499 0 0 1 6.201-8.18A8.496 8.496 0 0 1 148.05 34.5m-.275.307-13.722 13.009h16.46M20.504 172h17.478s7.799.324 15.194-4.859c7.395-5.182 86.163-77.77 86.163-77.77l-10.975-10.796L20.504 172Z"/><path stroke="currentColor"stroke-linecap="round"stroke-linejoin="round"stroke-width="8"
@@ -38,6 +40,19 @@ export default function initializeApp(callback) {
   solutionButton.textContent = 'Solution';
   solutionButton.className = 'action_button';
   options.appendChild(solutionButton);
+  solutionButton.addEventListener('click', () => {
+    resetGrid();
+    highlightGrid();
+  });
+
+  const resetButton = document.createElement('button');
+  resetButton.id = 'reset-button';
+  resetButton.type = 'button';
+  resetButton.textContent = 'Reset game';
+  resetButton.className = 'action_button';
+  options.appendChild(resetButton);
+  resetButton.addEventListener('click', () => resetGrid());
+
   main.appendChild(options);
 
   const nonogramWrapper = document.createElement('div');
