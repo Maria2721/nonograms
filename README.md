@@ -1,7 +1,5 @@
-# maria2721-JSFE2024Q4
+# Nonograms
 
-## Tasks
+## Result
 
--   Christmas Shop - https://rolling-scopes-school.github.io/maria2721-JSFE2024Q4/christmas-shop/
--   Simon Says - https://rolling-scopes-school.github.io/maria2721-JSFE2024Q4/simon-says/
--   Nonograms - https://rolling-scopes-school.github.io/maria2721-JSFE2024Q4/nonograms/
+https://maria2721.github.io/nonograms/
